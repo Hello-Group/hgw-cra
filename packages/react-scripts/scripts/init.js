@@ -69,8 +69,10 @@ function tryGitCommit(appPath) {
     // In the future, we might supply our own committer
     // like Ember CLI does, but for now, let's just
     // remove the Git files to avoid a half-done state.
-    console.warn('Git commit not created', e);
-    console.warn('Removing .git directory...');
+
+    // Git commit will fail when pre-commit hooks have been setup.
+    // console.warn('Git commit not created', e);
+    // console.warn('Removing .git directory...');
     try {
       // unlinkSync() doesn't work on directories.
       fs.removeSync(path.join(appPath, '.git'));
@@ -303,6 +305,7 @@ module.exports = function (
   const dependenciesToInstall = Object.entries({
     ...templatePackage.dependencies,
   });
+
   if (dependenciesToInstall.length) {
     args = args.concat(
       dependenciesToInstall.map(([dependency, version]) => {
