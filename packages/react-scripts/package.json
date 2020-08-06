@@ -1,6 +1,6 @@
 {
   "name": "@hellogreatworks/react-scripts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "HGW configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
@@ -31,29 +31,29 @@
     "@babel/core": "7.10.5",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.1",
     "@svgr/webpack": "5.4.0",
-    "@typescript-eslint/eslint-plugin": "^3.3.0",
-    "@typescript-eslint/parser": "^3.3.0",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.0.1",
+    "@typescript-eslint/eslint-plugin": "3.3.0",
+    "@typescript-eslint/parser": "3.3.0",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "26.0.1",
     "babel-loader": "8.1.0",
-    "babel-plugin-named-asset-import": "^0.3.6",
-    "babel-preset-react-app": "^9.1.2",
-    "bfj": "^7.0.2",
-    "camelcase": "^6.0.0",
+    "babel-plugin-named-asset-import": "0.3.6",
+    "babel-preset-react-app": "9.1.2",
+    "bfj": "7.0.2",
+    "camelcase": "6.0.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "css-loader": "3.6.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
-    "eslint": "^7.5.0",
-    "eslint-config-react-app": "^5.2.1",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-flowtype": "^5.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint": "6.8.0",
+    "eslint-config-react-app": "5.2.1",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-flowtype": "5.2.0",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "3.0.0",
     "file-loader": "6.0.0",
-    "fs-extra": "^9.0.0",
+    "fs-extra": "9.0.0",
     "html-webpack-plugin": "4.3.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.1.0",
@@ -79,20 +79,20 @@
     "terser-webpack-plugin": "3.0.7",
     "ts-pnp": "1.2.0",
     "url-loader": "4.1.0",
-    "webpack": "4.43.0",
-    "webpack-dev-server": "3.11.0",
+    "webpack": "4.42.1",
+    "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.3"
   },
   "devDependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "optionalDependencies": {
-    "fsevents": "^2.1.3"
+    "fsevents": "2.1.2"
   },
   "peerDependencies": {
-    "typescript": "^3.2.1"
+    "typescript": "3.2.1"
   },
   "peerDependenciesMeta": {
     "typescript": {
