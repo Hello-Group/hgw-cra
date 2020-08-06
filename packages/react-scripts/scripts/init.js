@@ -302,7 +302,6 @@ module.exports = function (
   // Install additional template dependencies, if present.
   const dependenciesToInstall = Object.entries({
     ...templatePackage.dependencies,
-    ...templatePackage.devDependencies,
   });
   if (dependenciesToInstall.length) {
     args = args.concat(
