@@ -173,7 +173,7 @@ module.exports = function (
   ];
 
   // Keys from templatePackage that will be merged with appPackage
-  const templatePackageToMerge = ['dependencies', 'scripts'];
+  const templatePackageToMerge = ['dependencies', 'devDependencies', 'scripts'];
 
   // Keys from templatePackage that will be added to appPackage,
   // replacing any existing entries.
@@ -186,6 +186,7 @@ module.exports = function (
 
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
+  appPackage.devDependencies = appPackage.devDependencies || {};
 
   // Setup the script rules
   const templateScripts = templatePackage.scripts || {};
@@ -209,11 +210,6 @@ module.exports = function (
       {}
     );
   }
-
-  // Setup the eslint config
-  appPackage.eslintConfig = {
-    extends: 'react-app',
-  };
 
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers;
@@ -289,15 +285,18 @@ module.exports = function (
   let command;
   let remove;
   let args;
+  let devCommand;
 
   if (useYarn) {
     command = 'yarnpkg';
     remove = 'remove';
     args = ['add'];
+    devCommand = ['add', '-D'];
   } else {
     command = 'npm';
     remove = 'uninstall';
     args = ['install', '--save', verbose && '--verbose'].filter(e => e);
+    devCommand = ['install', '--save-dev', verbose && '--verbose'].filter(e => e);
   }
 
   // Install additional template dependencies, if present.
@@ -309,6 +308,17 @@ module.exports = function (
     args = args.concat(
       dependenciesToInstall.map(([dependency, version]) => {
         return `${dependency}@${version}`;
+      })
+    );
+  }
+
+  // Install additional template dev dependencies, if present
+  const templateDevDependencies = templatePackage.devDependencies;
+
+  if (templateDevDependencies) {
+    devCommand = devCommand.concat(
+      Object.keys(templateDevDependencies).map(key => {
+        return `${key}@${templateDevDependencies[key]}`;
       })
     );
   }
@@ -327,6 +337,18 @@ module.exports = function (
     const proc = spawn.sync(command, args, { stdio: 'inherit' });
     if (proc.status !== 0) {
       console.error(`\`${command} ${args.join(' ')}\` failed`);
+      return;
+    }
+  }
+
+  // Install template dev dependencies
+  if (templateName && devCommand.length > 1) {
+    console.log();
+    console.log(`Installing template dev dependencies using ${command}...`);
+
+    const proc = spawn.sync(command, devCommand, { stdio: 'inherit' });
+    if (proc.status !== 0) {
+      console.error(`\`${command} ${devCommand.join(' ')}\` failed`);
       return;
     }
   }
