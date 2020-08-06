@@ -1,6 +1,6 @@
 {
   "name": "@hellogreatworks/react-scripts",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "HGW configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
@@ -56,7 +56,7 @@
     "fs-extra": "9.0.0",
     "html-webpack-plugin": "4.3.0",
     "identity-obj-proxy": "3.0.0",
-    "jest": "26.1.0",
+    "jest": "24.9.0",
     "jest-circus": "26.1.0",
     "jest-resolve": "26.1.0",
     "jest-watch-typeahead": "0.6.0",
@@ -79,20 +79,20 @@
     "terser-webpack-plugin": "3.0.7",
     "ts-pnp": "1.2.0",
     "url-loader": "4.1.0",
-    "webpack": "4.42.1",
-    "webpack-dev-server": "3.10.3",
+    "webpack": "4.43.0",
+    "webpack-dev-server": "3.11.0",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.3"
   },
   "devDependencies": {
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "optionalDependencies": {
-    "fsevents": "2.1.2"
+    "fsevents": "^2.1.3"
   },
   "peerDependencies": {
-    "typescript": "3.2.1"
+    "typescript": "^3.2.1"
   },
   "peerDependenciesMeta": {
     "typescript": {
