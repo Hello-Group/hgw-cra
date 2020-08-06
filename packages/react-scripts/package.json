@@ -1,6 +1,6 @@
 {
   "name": "@hellogreatworks/react-scripts",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "HGW configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
@@ -80,7 +80,7 @@
     "ts-pnp": "1.2.0",
     "url-loader": "4.1.0",
     "webpack": "4.42.0",
-    "webpack-dev-server": "3.11.0",
+    "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.3"
   },
